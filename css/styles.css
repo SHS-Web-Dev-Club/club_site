@@ -84,3 +84,26 @@ input[type='checkbox'] {
   color: rgba(0, 0, 0, 0.5) !important;
   font-size: 0.8em !important;
 }
+#contact{
+  text-align: center;
+}
+#contact h2{
+  text-decoration: underline;
+  font-size: 5em;
+}
+#contact p{
+  font-size: 3em;
+}
+/* unvisited link */
+#contact a{
+  color: black;
+  text-decoration: underline;
+  font-weight: 600;
+}
+#contact a:hover{
+  color: white;
+}
+
+#contact a:visited{
+  color: purple;
+}
