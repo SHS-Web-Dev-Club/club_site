@@ -32,7 +32,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
     <div class="container">
-      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Start Bootstrap</a>
+      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Toga Web Development</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -81,7 +81,7 @@
     </div>
   </section>
 
-  <section class="page-section">
+  <section class="page-section fade">
     <div class="container">
       <div class="product-item">
         <div class="product-item-title d-flex">
@@ -105,7 +105,7 @@
     </div>
   </section>
 
-  <section class="page-section">
+  <section class="page-section fade">
     <div class="container">
       <div class="product-item">
         <div class="product-item-title d-flex">
@@ -129,7 +129,7 @@
     </div>
   </section>
 
-   <section class="page-section">
+   <section class="page-section fade">
     <div class="container">
       <div class="product-item">
         <div class="product-item-title d-flex">
@@ -153,7 +153,7 @@
     </div>
   </section>
 
-   <section class="page-section">
+   <section class="page-section fade" id="products-05">
     <div class="container">
       <div class="product-item">
         <div class="product-item-title d-flex">
@@ -186,6 +186,25 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    $(window).on("load",function() {
+  $(window).scroll(function() {
+    var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+    $(".fade").each(function() {
+      /* Check the location of each desired element */
+      var objectBottom = $(this).offset().top +100;
+      
+      /* If the element is completely within bounds of the window, fade it in */
+      if (objectBottom < windowBottom) { //object comes into view (scrolling down)
+        if ($(this).css("opacity")==0) {$(this).fadeTo(500,1);}
+      } else { //object goes out of view (scrolling up)
+        if ($(this).css("opacity")==1) {$(this).fadeTo(500,0);}
+      }
+    });
+  }).scroll(); //invoke scroll-handler on page-load
+});
+  </script>
 
 </body>
 
